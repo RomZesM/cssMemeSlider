@@ -5,39 +5,89 @@ body{
 
 
 .mem-container{
-	width: 800px;
-	height: 400px;
+	width: 90vw;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
 	border: 2px solid black;
 }
-.wrapper{
-	max-width: 500px;
-	max-height: 350px;
-}
-
 .slider{
-	display: flex;
-	aspect-ratio: 16 / 9;
-	overflow-x: auto;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
+	width: 60%;
+	
+
+	border: 1px solid red;
 }
 
-.slider img{
+.images{
+	display: flex;
+	width: 100%;
+
+}
+
+.images img{
+	height: 27em;
+	width: 100%;
+	object-fit: cover;
+	transition: all 0.2s ease-in;
+}
+
+.images input{
+	display: none;
+}
+
+#slide01, #slide02, #slide03{
 	flex-grow: 1;
 	flex-shrink: 0;
 	flex-basis: 100%;
 	scroll-snap-align: start;
+	display: flex;
+	flex-direction: column;
 }
+
+
 .buttons-block {
 	display: flex;
 	border: 1px solid blue;
 }
 
-.buttons-block a{
+
+.buttons-block label{
 	border: 1px black solid;
 	height: 30px;
 	width: 30px;
 	background-color: red;
 	border-radius: 50%;
 	display: block;
+}
+
+.test{
+	height: 50px;
+	width: 50px;
+	border: 1px solid blue;
+}
+
+/*change label font after checking*/
+.buttons-block input[type="radio"]:checked + label{ /*what happens with circle after checked*/
+	font-weight: 700; 
+	
+}
+
+#b01:checked ~ .slide01{
+	margin-left: 0;
+}
+#b02:checked ~ .slide01{
+	margin-left: -100%;
+}
+#b03:checked ~ .slide01{
+	margin-left: -200%;
+}
+#b04:checked ~ .slide01{ 
+	margin-left: -300%;
+}	
+
+#b04:checked ~ .test{
+	border: 1px solid green;
 }
